@@ -17,9 +17,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("@/assets/images/coffee-beans-pattern.png") center/300px
-        repeat,
-      linear-gradient(to bottom, rgba($cream, 0.9), rgba($cream, 0.96));
+    background: linear-gradient(
+      to bottom,
+      rgba($cream, 0.9),
+      rgba($cream, 0.96)
+    );
     opacity: 0.12;
     z-index: -1;
     animation: subtleBackground 60s linear infinite;
