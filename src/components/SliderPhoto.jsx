@@ -1,13 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import "@/assets/scss/components/SliderPhoto.scss";
+import artist1 from "@/assets/images/artist-1.jpg";
+import artist2 from "@/assets/images/artist-2.jpg";
+import artist3 from "@/assets/images/artist-3.jpg";
+import artist4 from "@/assets/images/artist-4.jpg";
+import artist5 from "@/assets/images/artist-5.jpg";
+import artist6 from "@/assets/images/artist-6.jpg";
 
 const photos = [
-  { id: 1, src: "/images/artist-1.jpg", alt: "Работа 1" },
-  { id: 2, src: "/images/artist-2.jpg", alt: "Работа 2" },
-  { id: 3, src: "/images/artist-3.jpg", alt: "Работа 3" },
-  { id: 4, src: "/images/artist-4.jpg", alt: "Работа 4" },
-  { id: 5, src: "/images/artist-5.jpg", alt: "Работа 5" },
-  { id: 6, src: "/images/artist-6.jpg", alt: "Работа 6" },
+  { id: 1, src: artist1, alt: "Работа 1" },
+  { id: 2, src: artist2, alt: "Работа 2" },
+  { id: 3, src: artist3, alt: "Работа 3" },
+  { id: 4, src: artist4, alt: "Работа 4" },
+  { id: 5, src: artist5, alt: "Работа 5" },
+  { id: 6, src: artist6, alt: "Работа 6" },
 ];
 
 export default function SliderPhoto() {

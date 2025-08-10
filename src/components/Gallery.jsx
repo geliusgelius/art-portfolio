@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "@/assets/scss/components/Gallery.scss";
+import art1 from "@/assets/images/art1.jpg";
+import art2 from "@/assets/images/art2.jpg";
+import art3 from "@/assets/images/art3.jpg";
 
 const artworks = [
-  { id: 1, image: "/images/art1.jpg", title: "работа 1", year: 2023 },
-  { id: 2, image: "/images/art2.jpg", title: "работа 2", year: 2022 },
-  { id: 3, image: "/images/art3.jpg", title: "работа 2", year: 2022 },
+  { id: 1, image: art1, title: "работа 1", year: 2023 },
+  { id: 2, image: art2, title: "работа 2", year: 2022 },
+  { id: 3, image: art3, title: "работа 2", year: 2022 },
 ];
 
 export default function Gallery() {

@@ -1,4 +1,5 @@
 import "@/assets/scss/components/About.scss";
+import artistWorking from "@/assets/images/artist-working.jpg";
 
 export default function About() {
   return (
@@ -40,7 +41,7 @@ export default function About() {
           </div>
 
           <div className="about-image">
-            <img src="/images/artist-working.jpg" alt="Художник за работой" />
+            <img src={artistWorking} alt="Художник за работой" />
           </div>
         </div>
       </div>
