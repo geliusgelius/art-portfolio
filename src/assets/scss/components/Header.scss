@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "@/assets/scss/variables" as *;
 
 .header {
@@ -30,7 +31,11 @@
         text-shadow: 0 0 12px rgba($accent, 0.4);
 
         &::after {
-          background: linear-gradient(to right, $accent, lighten($accent, 15%));
+          background: linear-gradient(
+            to right,
+            $accent,
+            color.adjust($accent, $lightness: 15%)
+          );
           box-shadow: 0 2px 8px rgba($accent, 0.3);
         }
       }

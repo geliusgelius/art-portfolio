@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "@/assets/scss/variables" as *;
 
 .contacts-section {
@@ -63,7 +64,11 @@
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, $accent, lighten($accent, 15%));
+    background: linear-gradient(
+      90deg,
+      $accent,
+      color.adjust($accent, $lightness: 15%)
+    );
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba($accent, 0.3);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -71,7 +76,11 @@
 
   &:hover::after {
     width: 120px;
-    background: linear-gradient(90deg, lighten($accent, 5%), $accent);
+    background: linear-gradient(
+      90deg,
+      color.adjust($accent, $lightness: 5%),
+      $accent
+    );
   }
 }
 
@@ -132,7 +141,7 @@
     .contact-info-item:hover & {
       background: rgba($accent, 0.15);
       transform: rotate(8deg) scale(1.08);
-      color: darken($accent, 5%);
+      color: color.adjust($accent, $lightness: -5%);
       box-shadow: inset 0 0 0 1px rgba($accent, 0.25),
         0 5px 15px rgba($accent, 0.15);
     }
@@ -176,7 +185,11 @@
         left: 0;
         width: 0;
         height: 1px;
-        background: linear-gradient(90deg, $accent, lighten($accent, 15%));
+        background: linear-gradient(
+          90deg,
+          $accent,
+          color.adjust($accent, $lightness: 15%)
+        );
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
@@ -218,13 +231,21 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, $accent, lighten($accent, 15%));
+    background: linear-gradient(
+      90deg,
+      $accent,
+      color.adjust($accent, $lightness: 15%)
+    );
     transition: all 0.6s ease;
   }
 
   &:hover::before {
     height: 6px;
-    background: linear-gradient(90deg, lighten($accent, 5%), $accent);
+    background: linear-gradient(
+      90deg,
+      color.adjust($accent, $lightness: 5%),
+      $accent
+    );
   }
 
   .form-group {
@@ -282,7 +303,11 @@
   }
 
   button {
-    background: linear-gradient(135deg, $accent, lighten($accent, 8%));
+    background: linear-gradient(
+      135deg,
+      $accent,
+      color.adjust($accent, $lightness: 8%)
+    );
     color: $coffee-dark;
     padding: 1.3rem;
     border: none;

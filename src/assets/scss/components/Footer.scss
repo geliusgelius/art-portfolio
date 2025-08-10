@@ -1,10 +1,11 @@
+@use "sass:color";
 @use "@/assets/scss/variables" as *;
 
 .footer {
   background: linear-gradient(
     to bottom,
     $coffee-dark,
-    darken($coffee-dark, 8%)
+    color.adjust($coffee-dark, $lightness: -8%)
   );
   color: $cream;
   padding: 3rem 0 1.5rem;
@@ -49,8 +50,7 @@
     &-inner {
       &::before {
         font-size: 3.5rem;
-        text-shadow: 3px 3px 0 darken($accent, 15%),
-          5px 5px 8px rgba(0, 0, 0, 0.3);
+        text-shadow: 3px 3px 0 color.adjust($accent, $lightness: -15%);
       }
 
       &::after {
@@ -59,8 +59,7 @@
     }
 
     &:hover .monogram-inner::before {
-      text-shadow: 4px 4px 0 darken($accent, 15%),
-        7px 7px 10px rgba(0, 0, 0, 0.4);
+      text-shadow: 3px 3px 0 color.adjust($accent, $lightness: -15%);
     }
   }
 

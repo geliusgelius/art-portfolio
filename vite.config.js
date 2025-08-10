@@ -10,25 +10,30 @@ export default defineConfig({
   base: "/art-portfolio/",
   build: {
     outDir: "dist",
-    assetsDir: "assets",
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, "index.html"),
-
-        app: path.resolve(__dirname, "src/main.jsx"),
-      },
+      input: path.resolve(__dirname, "index.html"),
       output: {
-        entryFileNames: "assets/[name].[hash].js",
         assetFileNames: "assets/[name].[hash][extname]",
+        chunkFileNames: "assets/[name].[hash].js",
+        entryFileNames: "assets/[name].[hash].js",
       },
     },
   },
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-      "@components": path.resolve(__dirname, "src/components"),
-      "@images": path.resolve(__dirname, "public/images"),
-    },
+    alias: [
+      { find: "@", replacement: path.resolve(__dirname, "src") },
+      {
+        find: "@components",
+        replacement: path.resolve(__dirname, "src/components"),
+      },
+      {
+        find: "@images",
+        replacement: path.resolve(__dirname, "public/images"),
+      },
+    ],
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
   },
 });
