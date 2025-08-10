@@ -1,0 +1,26 @@
+@use "@/assets/scss/variables" as *;
+
+.cursor-brush {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-image: url("@/assets/images/brush-cursor.png");
+  background-size: cover;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) rotate(var(--rotation, 0deg));
+  mix-blend-mode: multiply;
+  will-change: transform;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s ease;
+
+  &.active {
+    opacity: 0.8;
+  }
+
+  &.click {
+    transform: translate(-50%, -50%) scale(0.9) rotate(var(--rotation, 0deg));
+    opacity: 1;
+  }
+}

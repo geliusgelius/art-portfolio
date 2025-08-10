@@ -1,0 +1,178 @@
+@use "@/assets/scss/variables" as *;
+
+.photo-slider {
+  margin-top: 50px;
+  padding: 3rem 0 0 0;
+  background: linear-gradient(
+    to right,
+    rgba($cream, 0.9) 0%,
+    rgba($cream, 0.7) 50%,
+    rgba($cream, 0.9) 100%
+  );
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("@/assets/images/paper-texture.png");
+    background-size: 300px;
+    opacity: 0.15;
+    z-index: -1;
+  }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 100%;
+  will-change: transform;
+  gap: 1rem;
+  padding: 0 2rem;
+  align-items: center;
+  transition: transform 0.5s ease-out;
+
+  &.animating {
+    transition: none;
+  }
+}
+
+.slide {
+  flex: 0 0 280px;
+  height: 240px;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $shadow-xl;
+  position: relative;
+  transition: all 0.4s ease;
+  border: 5px solid $accent;
+  background: $cream;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    border-color: darken($accent, 10%);
+  }
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(
+    to top,
+    rgba($coffee-dark, 0.9) 0%,
+    rgba($coffee-dark, 0.5) 70%,
+    transparent 100%
+  );
+  color: $cream;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+
+  .slide:hover & {
+    transform: translateY(0);
+  }
+
+  .photo-number {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.slider-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba($cream, 1) 0%,
+    rgba($cream, 0) 100%
+  );
+}
+
+.slider-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba($cream, 1) 0%,
+    rgba($cream, 0) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .photo-slider {
+    padding: 2rem 0;
+    margin-top: 30px;
+  }
+
+  .slider-container {
+    height: 220px;
+  }
+
+  .slide {
+    flex: 0 0 220px;
+    height: 180px;
+    border-width: 4px;
+  }
+
+  .slider-track {
+    gap: 0.8rem;
+    padding: 0 1.5rem;
+  }
+
+  .slide-caption {
+    padding: 1rem;
+
+    .photo-number {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    flex: 0 0 200px;
+    height: 160px;
+  }
+
+  .slider-track {
+    gap: 0.6rem;
+  }
+}

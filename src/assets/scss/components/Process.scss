@@ -1,0 +1,231 @@
+@use "@/assets/scss/variables" as *;
+
+.process-section {
+  padding: 3rem 1.5rem;
+  position: relative;
+  min-height: 65vh !important;
+  background: linear-gradient(
+    to bottom,
+    rgba($coffee-light, 0.1),
+    rgba($coffee-dark, 0.8)
+  );
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("@/assets/images/brush-strokes.png") center/cover;
+    opacity: 0.05;
+    z-index: -1;
+  }
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: $cream;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  position: relative;
+  letter-spacing: 0.5px;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: $accent;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba($accent, 0.3);
+  }
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.step-card {
+  background: rgba($cream, 0.96);
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba($coffee-medium, 0.1);
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: $border-radius;
+    transition: all 0.4s ease;
+  }
+
+  &::before {
+    top: -8px;
+    left: -8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2px solid rgba($accent, 0.4);
+    z-index: -1;
+  }
+
+  &::after {
+    top: -16px;
+    left: -16px;
+    right: 16px;
+    bottom: 16px;
+    border: 2px solid rgba($accent, 0.2);
+    z-index: -2;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+    &::before {
+      top: -10px;
+      left: -10px;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    &::after {
+      top: -18px;
+      left: -18px;
+      right: 18px;
+      bottom: 18px;
+    }
+
+    .step-icon {
+      transform: scale(1.05) rotate(3deg);
+    }
+  }
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  background: rgba($accent, 0.05);
+}
+
+.step-card h3 {
+  font-size: 1.4rem;
+  color: $coffee-dark;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.8rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: $accent;
+    border-radius: 2px;
+  }
+}
+
+.step-card p {
+  color: $coffee-medium;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 1200px) {
+  .process-steps {
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .process-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .process-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .step-card {
+    padding: 1.8rem;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-section {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .step-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .step-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
