@@ -13,23 +13,18 @@ export default defineConfig({
     assetsDir: "assets",
     emptyOutDir: true,
     rollupOptions: {
-      output: {
-        assetFileNames: "assets/[name].[hash][extname]",
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        // Явно включаем все компоненты:
+        app: path.resolve(__dirname, "src/main.jsx"),
       },
     },
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@styles": path.resolve(__dirname, "./src/assets/scss"),
-      "@images": path.resolve(__dirname, "./public/images"),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@styles/variables" as *;`,
-      },
+      "@": path.resolve(__dirname, "src"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@images": path.resolve(__dirname, "public/images"),
     },
   },
 });
