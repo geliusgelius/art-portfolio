@@ -20,8 +20,7 @@ body {
   position: relative;
 
   // Основной фон (градиент + текстура)
-  background: linear-gradient(rgba($cream, 0.8), rgba($cream, 0.8)),
-    url("@/assets/images/texture.png") repeat;
+  background: linear-gradient(rgba($cream, 0.8), rgba($cream, 0.8));
 
   background-size: auto, 300px;
   background-attachment: fixed;

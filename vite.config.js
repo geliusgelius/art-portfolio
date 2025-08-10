@@ -18,6 +18,10 @@ export default defineConfig({
 
         app: path.resolve(__dirname, "src/main.jsx"),
       },
+      output: {
+        entryFileNames: "assets/[name].[hash].js",
+        assetFileNames: "assets/[name].[hash][extname]",
+      },
     },
   },
   resolve: {
