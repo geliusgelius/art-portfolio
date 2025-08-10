@@ -15,7 +15,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
-        // Явно включаем все компоненты:
+
         app: path.resolve(__dirname, "src/main.jsx"),
       },
     },
