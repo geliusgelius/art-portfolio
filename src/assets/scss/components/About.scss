@@ -4,11 +4,12 @@
 .about-section {
   padding: 3rem 2rem;
   position: relative;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom,
     rgba($coffee-light, 0.1),
     rgba($coffee-dark, 0.7)
-  );
+  );*/
+  background: none;
   overflow: hidden;
 
   &::before {
@@ -18,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-
+    background: $accent;
     opacity: 0.05;
     z-index: 0;
   }
@@ -327,5 +328,97 @@
 
   .about-image {
     max-width: 100%;
+  }
+}
+
+// Art quote styles
+.art-quote {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: rgba($coffee-dark, 0.8);
+  color: $cream;
+  border-radius: $border-radius;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    font-size: 8rem;
+    color: rgba($cream, 0.1);
+    line-height: 1;
+    font-family: serif;
+    z-index: 1;
+  }
+
+  blockquote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+  }
+
+  footer {
+    margin-top: 1rem;
+    font-size: 1rem;
+    opacity: 0.8;
+    display: block;
+    text-align: right;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    &::before {
+      color: rgba($cream, 0.15);
+    }
+  }
+}
+
+// Адаптивные стили для цитаты
+@media (max-width: 992px) {
+  .art-quote {
+    margin: 2rem 0;
+    padding: 1.8rem;
+
+    blockquote {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .art-quote {
+    padding: 1.5rem;
+
+    &::before {
+      font-size: 6rem;
+    }
+
+    blockquote {
+      font-size: 1rem;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .art-quote {
+    padding: 1.2rem;
+
+    &::before {
+      font-size: 5rem;
+      left: 0.5rem;
+    }
   }
 }

@@ -6,6 +6,7 @@ import artist3 from "@/assets/images/artist-3.jpg";
 import artist4 from "@/assets/images/artist-4.jpg";
 import artist5 from "@/assets/images/artist-5.jpg";
 import artist6 from "@/assets/images/artist-6.jpg";
+import artist7 from "@/assets/images/artist-7.jpg";
 
 const photos = [
   { id: 1, src: artist1, alt: "Работа 1" },
@@ -14,6 +15,7 @@ const photos = [
   { id: 4, src: artist4, alt: "Работа 4" },
   { id: 5, src: artist5, alt: "Работа 5" },
   { id: 6, src: artist6, alt: "Работа 6" },
+  { id: 7, src: artist7, alt: "Работа 7" },
 ];
 
 export default function SliderPhoto() {

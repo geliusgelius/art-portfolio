@@ -2,8 +2,10 @@
 @use "@/assets/scss/variables" as *;
 
 .contacts-section {
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
   position: relative;
+  height: auto;
+  min-height: 500px;
   background: rgba($cream, 0.98);
   color: $coffee-dark;
   overflow: hidden;

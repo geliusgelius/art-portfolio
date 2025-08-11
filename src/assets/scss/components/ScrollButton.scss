@@ -1,0 +1,44 @@
+@use "sass:color";
+@use "@/assets/scss/variables" as *;
+
+.scroll-btns {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scroll-btn {
+  background: $accent;
+  color: $cream;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: $coffee-medium;
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+  svg {
+    display: block;
+    transition: transform 0.2s;
+  }
+
+  &:hover svg {
+    transform: translateY(-3px) scale(1.1);
+  }
+}

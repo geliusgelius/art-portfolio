@@ -4,12 +4,13 @@
 .process-section {
   padding: 3rem 1.5rem;
   position: relative;
-  min-height: 65vh !important;
-  background: linear-gradient(
-    to bottom,
-    rgba($coffee-light, 0.1),
-    rgba($coffee-dark, 0.8)
-  );
+  min-height: 55vh !important;
+  background: radial-gradient(
+      circle at 70% 30%,
+      rgba($accent, 0.05) 0%,
+      transparent 30%
+    ),
+    linear-gradient(45deg, rgba($coffee-medium, 0.03), transparent);
   overflow: hidden;
   z-index: 1;
 

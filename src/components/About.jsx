@@ -33,6 +33,15 @@ export default function About() {
                 </div>
               </div>
 
+              {}
+              <div className="art-quote">
+                <blockquote>
+                  "Искусство — это не то, что ты видишь, а то, что заставляешь
+                  видеть других"
+                  <footer>— Эдгар Дега</footer>
+                </blockquote>
+              </div>
+
               <p className="outro">
                 В каждом проекте стремлюсь создать не просто изображение, а
                 историю, которая будет говорить сама за себя.
@@ -41,7 +50,7 @@ export default function About() {
           </div>
 
           <div className="about-image">
-            <img src={artistWorking} alt="Художник за работой" />
+            <img src={artistWorking} alt="Художник" />
           </div>
         </div>
       </div>
