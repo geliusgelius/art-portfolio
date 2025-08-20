@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-content">
           <p>
             © {new Date().getFullYear()} Портфолио художника Зерниной Марины.
-            Все права защищены.
+            Все права защищены. Developer: Angelina Smirnova
           </p>
         </div>
       </div>
